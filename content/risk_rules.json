@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "bands": {
+    "Low": {"min": 0, "max": 15, "color": "green", "msg": "Good practices observed. Maintain hygiene."},
+    "Medium": {"min": 16, "max": 40, "color": "yellow", "msg": "Warning: Corrective actions needed to prevent toxin buildup."},
+    "High": {"min": 41, "max": 100, "color": "red", "msg": "Critical Risk! High probability of aflatoxin contamination. Intervene immediately."}
+  },
+  "rules": [
+    {
+      "trigger_tag": "soil_contact",
+      "action_id": "pc_02",
+      "reason": "Drying on bare soil exposes grain to fungi."
+    },
+    {
+      "trigger_tag": "climate_rain",
+      "action_id": "pc_16",
+      "reason": "Re-wetting spikes moisture. Seek mechanical drying."
+    },
+    {
+      "trigger_tag": "feed_contamination",
+      "action_id": "pc_08",
+      "reason": "Feeding culls contaminates milk. Remove from feed chain."
+    },
+    {
+      "trigger_tag": "moisture_transfer",
+      "action_id": "pc_04",
+      "reason": "Bags on the floor absorb moisture. Use pallets."
+    }
+  ],
+  "global_actions": {
+    "top_seasonal": ["pc_01", "pc_06", "pc_07"],
+    "disclaimer": "MycoGuard provides risk screening, not lab testing. Always discard moldy grain from food/feed chains. Do not burn. Follow county public health guidance."
+  }
+}

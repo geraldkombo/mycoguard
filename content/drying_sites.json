@@ -1,0 +1,54 @@
+[
+  {
+    "id": "ds_01",
+    "name": "NCPB Kitale Silos",
+    "county": "Trans Nzoia",
+    "type": "Silo / Commercial Dryer",
+    "access": "Public",
+    "pricing": "Ksh 70 per 90kg bag / Ksh 18.90 per 1% moisture drop per 50kg bag",
+    "contact": "0206536028",
+    "map_query": "NCPB Kitale",
+    "source_url": "https://ncpb.co.ke/drying/",
+    "verified_date": "2026-06",
+    "status": "Official"
+  },
+  {
+    "id": "ds_02",
+    "name": "NCPB Eldoret Silos",
+    "county": "Uasin Gishu",
+    "type": "Silo / Commercial Dryer",
+    "access": "Public",
+    "pricing": "Ksh 70 per 90kg bag / Ksh 18.90 per 1% moisture drop per 50kg bag",
+    "contact": "0206536028",
+    "map_query": "NCPB Eldoret",
+    "source_url": "https://ncpb.co.ke/drying/",
+    "verified_date": "2026-06",
+    "status": "Official"
+  },
+  {
+    "id": "ds_03",
+    "name": "NCPB Mois Bridge Silos",
+    "county": "Uasin Gishu / Trans Nzoia Border",
+    "type": "Silo / Commercial Dryer",
+    "access": "Public",
+    "pricing": "Ksh 70 per 90kg bag / Ksh 18.90 per 1% moisture drop per 50kg bag",
+    "contact": "0206536028",
+    "map_query": "NCPB Mois Bridge",
+    "source_url": "https://ncpb.co.ke/drying/",
+    "verified_date": "2026-06",
+    "status": "Official"
+  },
+  {
+    "id": "ds_04",
+    "name": "Menengai Geothermal Grain Dryer (GDC)",
+    "county": "Nakuru",
+    "type": "Geothermal Batch Dryer",
+    "access": "Pilot / Semi-Commercial",
+    "pricing": "Unknown (Call)",
+    "contact": "GDC Menengai Office",
+    "map_query": "Geothermal Development Company Menengai",
+    "source_url": "https://www.gdc.co.ke/application-of-geothermal-energy-in-agro-based-industries/",
+    "verified_date": "2026-06",
+    "status": "Official"
+  }
+]

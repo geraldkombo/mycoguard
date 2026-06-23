@@ -1,0 +1,45 @@
+{
+ "modules": [
+   {
+     "module_id": "mod_1_field_harvest",
+     "title": "Field & Harvest Risk",
+     "questions": [
+       {"id": "q101", "question_en": "Did the crop experience severe drought or heat stress during pod/grain filling?", "question_sw": "Je, zao lilipata ukame mkali au joto kali wakati wa kujaa kwa nafaka?", "help_en": "Heat stress weakens plant immunity.", "help_sw": "Joto kali hudhoofisha kinga ya mmea.", "answer_type": "yesno", "weights": {"yes": 3, "no": 0}, "driver_tag": "climate_drought", "place_tag": "Field"},
+       {"id": "q102", "question_en": "Are there visible signs of heavy insect damage in the field?", "question_sw": "Je, kuna dalili za wazi za uharibifu wa wadudu shambani?", "help_en": "Insects break the protective grain cover.", "help_sw": "Wadudu huvunja ganda la kinga la nafaka.", "answer_type": "yesno", "weights": {"yes": 2, "no": 0}, "driver_tag": "pest_damage", "place_tag": "Field"},
+       {"id": "q103", "question_en": "Has the crop been exposed to unexpected late-season rains?", "question_sw": "Je, zao limekumbwa na mvua zisizotarajiwa za mwisho wa msimu?", "help_en": "Rain at harvest triggers fungal growth.", "help_sw": "Mvua wakati wa mavuno huchochea ukuaji wa kuvu.", "answer_type": "yesno", "weights": {"yes": 3, "no": 0}, "driver_tag": "climate_rain", "place_tag": "Field"},
+       {"id": "q104", "question_en": "Was harvesting delayed by more than two weeks after maturity?", "question_sw": "Je, uvunaji ulicheleweshwa kwa zaidi ya wiki mbili baada ya kukomaa?", "help_en": "Delayed harvest increases field exposure.", "help_sw": "Kuchelewa kuvuna huongeza mfiduo shambani.", "answer_type": "yesno", "weights": {"yes": 2, "no": 0}, "driver_tag": "delayed_harvest", "place_tag": "Harvest"},
+       {"id": "q105", "question_en": "Are harvested cobs/pods left on the bare ground in the field?", "question_sw": "Je, mahindi/maganda yaliyovunwa yanaachwa kwenye udongo mtupu shambani?", "help_en": "Soil transmits fungal spores.", "help_sw": "Udongo husambaza spora za kuvu.", "answer_type": "yesno", "weights": {"yes": 3, "no": 0}, "driver_tag": "soil_contact", "place_tag": "Harvest"}
+     ]
+   },
+   {
+     "module_id": "mod_2_drying_shelling",
+     "title": "Drying & Shelling",
+     "questions": [
+       {"id": "q201", "question_en": "Is the grain being dried directly on bare soil?", "question_sw": "Je, nafaka inakaushwa moja kwa moja kwenye udongo?", "help_en": "Soil contamination is highly dangerous.", "help_sw": "Uchafuzi wa udongo ni hatari sana.", "answer_type": "yesno", "weights": {"yes": 4, "no": 0}, "driver_tag": "soil_contact", "place_tag": "Drying"},
+       {"id": "q202", "question_en": "Has the drying grain been re-wetted by dew or unexpected rain?", "question_sw": "Je, nafaka inayokaushwa imelowa tena kwa umande au mvua isiyotarajiwa?", "help_en": "Rewetting restarts toxin production.", "help_sw": "Kulowa tena huanzisha uzalishaji wa sumu.", "answer_type": "yesno", "weights": {"yes": 4, "no": 0}, "driver_tag": "climate_rain", "place_tag": "Drying"},
+       {"id": "q203", "question_en": "Are broken and discolored grains sorted out before shelling?", "question_sw": "Je, nafaka zilizovunjika na zilizobadilika rangi zinachaguliwa kabla ya kupura?", "help_en": "Sorting removes high-risk grains.", "help_sw": "Kuchagua huondoa nafaka hatari.", "answer_type": "yesno", "weights": {"yes": 0, "no": 2}, "driver_tag": "poor_sorting", "place_tag": "Shelling_Milling"},
+       {"id": "q204", "question_en": "Does the mechanical sheller cause visible cracking or crushing of grains?", "question_sw": "Je, mashine ya kupura husababisha kuvunjika kwa nafaka?", "help_en": "Cracks invite fungal infection.", "help_sw": "Mipasuko huvutia maambukizi ya kuvu.", "answer_type": "yesno", "weights": {"yes": 3, "no": 0}, "driver_tag": "physical_damage", "place_tag": "Shelling_Milling"}
+     ]
+   },
+   {
+     "module_id": "mod_3_store_transport",
+     "title": "Storage, Transport & Market",
+     "questions": [
+       {"id": "q301", "question_en": "Are storage bags placed directly on the floor without pallets?", "question_sw": "Je, mifuko ya kuhifadhi inawekwa moja kwa moja sakafuni bila mbao?", "help_en": "Floors transfer moisture to bags.", "help_sw": "Sakafu huhamisha unyevu kwenye mifuko.", "answer_type": "yesno", "weights": {"yes": 3, "no": 0}, "driver_tag": "moisture_transfer", "place_tag": "Home_store"},
+       {"id": "q302", "question_en": "Does the storage roof leak during heavy rains?", "question_sw": "Je, paa la stoo linavuja wakati wa mvua kubwa?", "help_en": "Leaks destroy dry grain.", "help_sw": "Kuvuja huharibu nafaka kavu.", "answer_type": "yesno", "weights": {"yes": 4, "no": 0}, "driver_tag": "climate_rain", "place_tag": "Home_store"},
+       {"id": "q303", "question_en": "Is the transport vehicle open and exposed to rain without a tarpaulin?", "question_sw": "Je, gari la usafiri liko wazi na linapigwa na mvua bila turubai?", "help_en": "Rain during transport causes rot.", "help_sw": "Mvua wakati wa usafiri husababisha kuoza.", "answer_type": "yesno", "weights": {"yes": 3, "no": 0}, "driver_tag": "climate_rain", "place_tag": "Transport"},
+       {"id": "q304", "question_en": "Do traders mix incoming wet bags with dry stock?", "question_sw": "Je, wafanyabiashara wanachanganya mifuko mibichi na mzigo mkavu?", "help_en": "Mixing ruins the whole batch.", "help_sw": "Kuchanganya huharibu mzigo wote.", "answer_type": "yesno", "weights": {"yes": 4, "no": 0}, "driver_tag": "moisture_transfer", "place_tag": "Trader_Market"}
+     ]
+   },
+   {
+     "module_id": "mod_4_feed_milk",
+     "title": "Feed & Milk Context (One Health)",
+     "questions": [
+       {"id": "q401", "question_en": "Are moldy, discolored, or rejected grains fed to livestock?", "question_sw": "Je, nafaka iliyooza inalishwa kwa mifugo?", "help_en": "Mold directly poisons milk.", "help_sw": "Kuvu hutia sumu moja kwa moja kwenye maziwa.", "answer_type": "yesno", "weights": {"yes": 5, "no": 0}, "driver_tag": "feed_contamination", "place_tag": "Feed_store"},
+       {"id": "q402", "question_en": "Is commercial dairy feed stored on the floor in damp conditions?", "question_sw": "Je, chakula cha ng'ombe kinahifadhiwa sakafuni penye unyevunyevu?", "help_en": "Damp feed grows toxins quickly.", "help_sw": "Chakula kibichi huotesha sumu haraka.", "answer_type": "yesno", "weights": {"yes": 3, "no": 0}, "driver_tag": "moisture_transfer", "place_tag": "Feed_store"},
+       {"id": "q403", "question_en": "Is moldy grain burned for disposal?", "question_sw": "Je, nafaka iliyooza inachomwa moto kama njia ya kutupa?", "help_en": "Burning releases toxic smoke.", "help_sw": "Kuchoma hutoa moshi wenye sumu.", "answer_type": "yesno", "weights": {"yes": 4, "no": 0}, "driver_tag": "unsafe_disposal", "place_tag": "Feed_store"},
+       {"id": "q404", "question_en": "Do you discard severely moldy feed safely away from food/feed chains?", "question_sw": "Je, unatupa chakula kilichooza mbali na mnyororo wa chakula?", "help_en": "Safe disposal protects everyone.", "help_sw": "Utupaji salama hulinda kila mtu.", "answer_type": "yesno", "weights": {"yes": 0, "no": 4}, "driver_tag": "safe_disposal", "place_tag": "Feed_store"}
+     ]
+   }
+ ]
+}

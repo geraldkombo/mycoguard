@@ -1,0 +1,26 @@
+{
+  "en": {
+    "app_title": "MycoGuard Kenya",
+    "btn_start_group": "Start Group Sprint",
+    "btn_export_pdf": "Export Evidence (PDF)",
+    "btn_export_csv": "Backup Data (CSV)",
+    "weather_mode": "Today's Conditions",
+    "drying_directory": "Verified Drying Directory",
+    "disclaimer": "MycoGuard provides risk screening, not lab testing. Always discard moldy grain from food/feed chains. Do not burn. Follow county public health guidance.",
+    "places_header": "Assess the 10 Places",
+    "btn_calendar": "Add Reminders to Calendar",
+    "seasonal_select": "Select Season"
+  },
+  "sw": {
+    "app_title": "MycoGuard Kenya",
+    "btn_start_group": "Anza Tathmini ya Kikundi",
+    "btn_export_pdf": "Pakua Ripoti (PDF)",
+    "btn_export_csv": "Hifadhi Data (CSV)",
+    "weather_mode": "Hali ya Hewa Leo",
+    "drying_directory": "Orodha ya Vikaushio Vilivyothibitishwa",
+    "disclaimer": "MycoGuard inatoa tathmini ya hatari, sio vipimo vya maabara. Tupa nafaka zilizooza usilishe watu wala mifugo. Usichome moto. Fuata ushauri wa afya wa kaunti.",
+    "places_header": "Tathmini Maeneo 10",
+    "btn_calendar": "Weka Vikumbusho kwenye Kalenda",
+    "seasonal_select": "Chagua Msimu"
+  }
+}

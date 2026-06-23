@@ -1,0 +1,61 @@
+{
+  "observed_conditions": [
+    {
+      "id": "obs_rain",
+      "label": "Raining / Flooding",
+      "banner_type": "danger",
+      "message_en": "High Re-wetting Risk: Do not sun-dry. Use tarps and cover immediately, or seek the Verified Drying Directory for mechanical drying.",
+      "message_sw": "Hatari Kubwa: Usikaushe nje bila turubai. Tafuta mashine ya kukaushia.",
+      "actions": ["pc_02", "pc_16"]
+    },
+    {
+      "id": "obs_cloudy",
+      "label": "Cloudy / Foggy",
+      "banner_type": "warning",
+      "message_en": "Slow Drying Risk: Grain stays damp longer. Spread thinner on tarps and turn frequently.",
+      "message_sw": "Nafaka itachelewa kukauka. Tandaza kwa wembamba kwenye turubai.",
+      "actions": ["pc_02"]
+    },
+    {
+      "id": "obs_hot",
+      "label": "Hot / Drought stress",
+      "banner_type": "warning",
+      "message_en": "Drought Stress Alert: High temperatures stress crops in the field. Harvest immediately at maturity and check for insect damage.",
+      "message_sw": "Joto kali linaongeza hatari ya kuvu shambani. Vuna mapema mmea ukikomaa.",
+      "actions": ["pc_01", "pc_10"]
+    },
+    {
+      "id": "obs_humid",
+      "label": "High humidity / Dew at night",
+      "banner_type": "warning",
+      "message_en": "Condensation Risk: Cover drying grain before evening dew. Check storage roofs for 'sweating'.",
+      "message_sw": "Funika nafaka kabla ya umande wa jioni. Kagua stoo kuzuia unyevu.",
+      "actions": ["pc_06"]
+    }
+  ],
+  "seasonal_guidance": {
+    "MAM": "During Long Rains (MAM): Drying is highly risky. Prioritize tarpaulins, cover at night, and check the Verified Directory for mechanical dryers if available.",
+    "OND": "During Short Rains (OND): Monitor late-season rainfall closely. Harvest immediately to avoid field mold if rains extend.",
+    "DRY": "During Dry Season: Watch for drought stress and pests. Prioritize early harvest of damaged sections and enforce strict sorting."
+  },
+  "ics_templates": [
+    {
+      "id": "cal_cover",
+      "title": "Evening: Cover Drying Grain",
+      "description": "Ensure all drying grain is securely covered on tarps to protect from night dew or unexpected rain.",
+      "recurrence": "FREQ=DAILY;COUNT=7"
+    },
+    {
+      "id": "cal_storage",
+      "title": "Weekly: Check Roof & Pallets",
+      "description": "Inspect storage structures for roof leaks, condensation, and ensure bags remain on pallets.",
+      "recurrence": "FREQ=WEEKLY;COUNT=4"
+    },
+    {
+      "id": "cal_salt",
+      "title": "Before Bagging: Do Moisture Test",
+      "description": "Perform a moisture check before sealing to ensure it meets the 13.5% safe threshold.",
+      "recurrence": "FREQ=ONCE"
+    }
+  ]
+}
