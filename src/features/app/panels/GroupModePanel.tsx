@@ -26,6 +26,7 @@ export function GroupModePanel({
   const [participantLabel, setParticipantLabel] = useState('')
   const [rows, setRows] = useState<GroupSummaryRow[]>([])
   const [isTakingAssessment, setIsTakingAssessment] = useState(false)
+  const [isSavingParticipant, setIsSavingParticipant] = useState(false)
   const [answers, setAnswers] = useState<Record<string, YesNoAnswer>>({})
   const [activeModuleIndex, setActiveModuleIndex] = useState(0)
 
@@ -174,20 +175,24 @@ export function GroupModePanel({
             }}
             onComplete={async () => {
               if (!isAssessmentComplete(answers)) return
-
-              const record = createAssessmentRecord(answers, language)
-
-              await onSaveToHistory(record)
-              setRows((current) => [
-                ...current,
-                {
-                  participantLabel: participantLabel || `Participant ${current.length + 1}`,
-                  record,
-                },
-              ])
-              resetFlow()
+              setIsSavingParticipant(true)
+              try {
+                const record = createAssessmentRecord(answers, language)
+                await onSaveToHistory(record)
+                setRows((current) => [
+                  ...current,
+                  {
+                    participantLabel: participantLabel || `Participant ${current.length + 1}`,
+                    record,
+                  },
+                ])
+                resetFlow()
+              } finally {
+                setIsSavingParticipant(false)
+              }
             }}
             completeLabel="Save participant"
+            isSaving={isSavingParticipant}
           />
         </section>
       ) : null}

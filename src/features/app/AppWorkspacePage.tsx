@@ -1,3 +1,4 @@
+import { lazy, Suspense, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { SiteShell } from '../../components/layout/SiteShell'
@@ -10,14 +11,28 @@ import { AppHomePanel } from './panels/AppHomePanel'
 import { NewAssessmentPanel } from './panels/NewAssessmentPanel'
 import { ResultsPanel } from './panels/ResultsPanel'
 import { HistoryPanel } from './panels/HistoryPanel'
-import { WeatherPanel } from './panels/WeatherPanel'
-import { DryingDirectoryPanel } from './panels/DryingDirectoryPanel'
-import { GroupModePanel } from './panels/GroupModePanel'
 import { SettingsPanel } from './panels/SettingsPanel'
 import { appRouteSummaries } from '../../content/publicContent'
 import { exportAssessmentsBackupJson, exportAssessmentsToCsv } from '../../app/exports'
 
+const WeatherPanel = lazy(() => import('./panels/WeatherPanel').then((m) => ({ default: m.WeatherPanel })))
+const DryingDirectoryPanel = lazy(() => import('./panels/DryingDirectoryPanel').then((m) => ({ default: m.DryingDirectoryPanel })))
+const GroupModePanel = lazy(() => import('./panels/GroupModePanel').then((m) => ({ default: m.GroupModePanel })))
+
+function PanelSkeleton() {
+  return (
+    <div className="mt-8 space-y-6">
+      <div className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
+        <div className="h-12 w-3/4 rounded bg-stone-200" />
+        <div className="mt-4 h-6 w-1/2 rounded bg-stone-200" />
+        <div className="mt-4 h-64 rounded bg-stone-200" />
+      </div>
+    </div>
+  )
+}
+
 export function AppWorkspacePage() {
+  const [isSavingAssessment, setIsSavingAssessment] = useState(false)
   const {
     language,
     setLanguage,
@@ -36,6 +51,15 @@ export function AppWorkspacePage() {
     clearAssessments,
     saveToHistory,
   } = useOfflineWorkspace()
+
+  async function handleSaveAssessment() {
+    setIsSavingAssessment(true)
+    try {
+      await saveAssessment()
+    } finally {
+      setIsSavingAssessment(false)
+    }
+  }
 
   if (isLoadingStorage) {
     return (
@@ -145,7 +169,7 @@ export function AppWorkspacePage() {
           <AppHomePanel latestAssessment={latestAssessment} />
         ) : null}
 
-        {route.path === '/app/new-assessment' ? (
+{route.path === '/app/new-assessment' ? (
           <NewAssessmentPanel
             language={language}
             answers={answers}
@@ -155,7 +179,8 @@ export function AppWorkspacePage() {
               setAnswers((current) => ({ ...current, [questionId]: answer }))
             }
             onReset={resetAssessment}
-            onComplete={saveAssessment}
+            onComplete={handleSaveAssessment}
+            isSaving={isSavingAssessment}
           />
         ) : null}
 
@@ -177,20 +202,28 @@ export function AppWorkspacePage() {
           />
         ) : null}
 
-        {route.path === '/app/weather' ? (
-          <WeatherPanel language={language} />
+{route.path === '/app/weather' ? (
+          <Suspense fallback={<PanelSkeleton />}>
+            <WeatherPanel language={language} />
+          </Suspense>
         ) : null}
 
-        {route.path === '/app/drying-directory' ? <DryingDirectoryPanel /> : null}
+        {route.path === '/app/drying-directory' ? (
+          <Suspense fallback={<PanelSkeleton />}>
+            <DryingDirectoryPanel />
+          </Suspense>
+        ) : null}
 
         {route.path === '/app/group-mode' ? (
-          <GroupModePanel
-            language={language}
-            onSaveToHistory={async (record) => {
-              await saveToHistory(record)
-              showToast('Participant assessment saved')
-            }}
-          />
+          <Suspense fallback={<PanelSkeleton />}>
+            <GroupModePanel
+              language={language}
+              onSaveToHistory={async (record) => {
+                await saveToHistory(record)
+                showToast('Participant assessment saved')
+              }}
+            />
+          </Suspense>
         ) : null}
 
         {route.path === '/app/settings' ? (

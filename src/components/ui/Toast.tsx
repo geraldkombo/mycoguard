@@ -24,6 +24,25 @@ export function ToastContainer() {
     }, 200)
   }, [])
 
+  const dismissTopToast = useCallback(() => {
+    setToasts((prev) => {
+      if (prev.length === 0) return prev
+      const topToast = prev[0]
+      removeToast(topToast.id)
+      return prev
+    })
+  }, [removeToast])
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        dismissTopToast()
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [dismissTopToast])
+
   const addToast = useCallback((message: string, type?: ToastType) => {
     const id = ++toastId
     setToasts((prev) => [...prev, { id, message, type: type ?? 'success' }])
@@ -65,7 +84,7 @@ export function ToastContainer() {
               <button
                 type="button"
                 onClick={() => removeToast(toast.id)}
-                className="ml-2 rounded-full p-1 opacity-70 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="ml-2 rounded-full p-1 opacity-70 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-800"
                 aria-label="Dismiss notification"
               >
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

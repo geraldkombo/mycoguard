@@ -12,8 +12,12 @@ export function DryingDirectoryPanel() {
       </section>
 
       <section className="space-y-4">
-        {dryingSites.map((site) => (
-          <div key={site.id} className="animate-slide-up rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm transition-all duration-200 hover:shadow-md">
+        {dryingSites.map((site, i) => (
+          <div
+            key={site.id}
+            className="animate-slide-up rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm transition-all duration-200 hover:shadow-md"
+            style={{ animationDelay: `${i * 0.05}s` }}
+          >
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-600">
@@ -31,7 +35,7 @@ export function DryingDirectoryPanel() {
                 href={site.source_url}
                 target="_blank"
                 rel="noreferrer"
-                className="font-semibold text-emerald-900 transition-colors hover:underline focus-visible:outline-none focus-visible:underline"
+                className="font-semibold text-emerald-900 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2"
               >
                 Source URL &nearr;
               </a>

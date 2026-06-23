@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
 :root {
+  --color-brand: #065f46;
+  --color-brand-light: #a7f3d0;
+  --color-surface: #fafaf9;
+  --color-text: #1c1917;
+  --color-text-muted: #57534e;
+  --radius-card: 1.75rem;
+  --radius-pill: 9999px;
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-card-hover: 0 4px 12px -2px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.03);
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: #1c1917;
@@ -51,6 +60,11 @@ dt {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes slide-up-stagger {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes pulse-soft {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
@@ -72,6 +86,10 @@ dt {
 
 .animate-slide-up {
   animation: slide-up 0.4s ease-out;
+}
+
+.animate-slide-up-stagger {
+  animation: slide-up-stagger 0.4s ease-out;
 }
 
 .animate-pulse-soft {
@@ -96,3 +114,4 @@ dt {
     scroll-behavior: auto !important;
   }
 }
+

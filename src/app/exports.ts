@@ -81,8 +81,9 @@ export function exportSingleAssessmentJson(record: AssessmentRecord) {
   )
 }
 
-export function exportSingleAssessmentPdf(record: AssessmentRecord) {
-  const doc = new jsPDF({ unit: 'pt', format: 'a4' })
+export async function exportSingleAssessmentPdf(record: AssessmentRecord) {
+  const { jsPDF: JsPDF } = await import('jspdf')
+  const doc = new JsPDF({ unit: 'pt', format: 'a4' } as any)
   const pageWidth = doc.internal.pageSize.getWidth()
   const marginX = 48
   const contentWidth = pageWidth - marginX * 2
@@ -149,8 +150,9 @@ export type GroupSummaryRow = {
   record: AssessmentRecord
 }
 
-export function exportGroupSummaryPdf(sessionName: string, rows: GroupSummaryRow[]) {
-  const doc = new jsPDF({ unit: 'pt', format: 'a4' })
+export async function exportGroupSummaryPdf(sessionName: string, rows: GroupSummaryRow[]) {
+  const { jsPDF: JsPDF } = await import('jspdf')
+  const doc = new JsPDF({ unit: 'pt', format: 'a4' } as any)
   const pageWidth = doc.internal.pageSize.getWidth()
   const marginX = 48
   const contentWidth = pageWidth - marginX * 2

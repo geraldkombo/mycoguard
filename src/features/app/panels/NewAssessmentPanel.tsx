@@ -20,6 +20,7 @@ type NewAssessmentPanelProps = {
   onReset: () => void
   onComplete: () => void
   completeLabel?: string
+  isSaving?: boolean
 }
 
 export function NewAssessmentPanel({
@@ -31,6 +32,7 @@ export function NewAssessmentPanel({
   onReset,
   onComplete,
   completeLabel = 'Continue to results',
+  isSaving = false,
 }: NewAssessmentPanelProps) {
   const progress = getAssessmentProgress(answers)
   const allAnswered = isAssessmentComplete(answers)
@@ -192,27 +194,37 @@ export function NewAssessmentPanel({
               Complete all modules to compute a result and save it offline.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <button
-              type="button"
-              onClick={onReset}
-              className="rounded-full border border-stone-300 px-5 py-3 text-sm font-semibold text-stone-800 transition-all duration-200 hover:border-stone-500 hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2 active:scale-[0.97]"
-            >
-              Reset answers
-            </button>
-            <button
-              type="button"
-              onClick={onComplete}
-              disabled={!allAnswered}
-              className={`rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.97] ${
-                allAnswered
-                  ? 'bg-emerald-800 text-white shadow-sm hover:bg-emerald-900 focus-visible:ring-emerald-700'
-                  : 'cursor-not-allowed bg-stone-200 text-stone-500'
-              }`}
-            >
-              {completeLabel}
-            </button>
-          </div>
+<div className="flex flex-wrap gap-3">
+             <button
+               type="button"
+               onClick={onReset}
+               className="rounded-full border border-stone-300 px-5 py-3 text-sm font-semibold text-stone-800 transition-all duration-200 hover:border-stone-500 hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2 active:scale-[0.97]"
+             >
+               Reset answers
+             </button>
+             <button
+               type="button"
+               onClick={onComplete}
+               disabled={!allAnswered || isSaving}
+               className={`rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.97] ${
+                 allAnswered && !isSaving
+                   ? 'bg-emerald-800 text-white shadow-sm hover:bg-emerald-900 focus-visible:ring-emerald-700'
+                   : 'cursor-not-allowed bg-stone-200 text-stone-500'
+               }`}
+             >
+               {isSaving ? (
+                 <span className="flex items-center gap-2">
+                   <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                   </svg>
+                   Saving...
+                 </span>
+               ) : (
+                 completeLabel
+               )}
+             </button>
+           </div>
         </div>
       </div>
     </section>
