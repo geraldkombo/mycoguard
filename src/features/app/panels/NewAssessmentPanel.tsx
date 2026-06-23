@@ -44,7 +44,7 @@ export function NewAssessmentPanel({
 
   return (
     <section className="mt-8 space-y-6">
-      <section className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
+      <section className="animate-fade-in rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-600">
@@ -65,7 +65,7 @@ export function NewAssessmentPanel({
         </div>
         <div className="mt-4 h-3 w-full rounded-full bg-stone-100">
           <div
-            className="h-3 rounded-full bg-emerald-700 transition-[width]"
+            className="h-3 rounded-full bg-emerald-700 transition-all duration-500 ease-out"
             style={{ width: `${progress.percentComplete}%` }}
             aria-hidden="true"
           />
@@ -76,7 +76,7 @@ export function NewAssessmentPanel({
         </p>
       </section>
 
-      <section className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
+      <section className="animate-fade-in rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-600">
@@ -93,7 +93,10 @@ export function NewAssessmentPanel({
 
         <div className="mt-6 space-y-5">
           {currentModule.questions.map((question) => (
-            <div key={question.id} className="rounded-[1.5rem] border border-stone-200 p-5">
+            <div
+              key={question.id}
+              className="rounded-[1.5rem] border border-stone-200 p-5 transition-all duration-200 hover:border-stone-300"
+            >
               <p className="text-base font-medium text-stone-950">
                 {getQuestionText(question, language)}
               </p>
@@ -109,12 +112,12 @@ export function NewAssessmentPanel({
                       setNotice(null)
                       onAnswer(question.id, option)
                     }}
-                    className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                    className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.95] ${
                       answers[question.id] === option
                         ? option === 'yes'
-                          ? 'bg-red-600 text-white'
-                          : 'bg-emerald-800 text-white'
-                        : 'border border-stone-300 bg-white text-stone-700'
+                          ? 'bg-red-600 text-white shadow-sm'
+                          : 'bg-emerald-800 text-white shadow-sm'
+                        : 'border border-stone-300 bg-white text-stone-700 hover:border-stone-500 hover:bg-stone-50 focus-visible:ring-stone-400'
                     }`}
                   >
                     {language === 'sw'
@@ -145,9 +148,9 @@ export function NewAssessmentPanel({
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
             disabled={!canGoBack}
-            className={`rounded-full px-5 py-3 text-sm font-semibold ${
+            className={`rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
               canGoBack
-                ? 'border border-stone-300 bg-white text-stone-800'
+                ? 'border border-stone-300 bg-white text-stone-800 hover:border-stone-500 hover:bg-stone-50 focus-visible:ring-stone-400 active:scale-[0.97]'
                 : 'cursor-not-allowed bg-stone-100 text-stone-400'
             }`}
           >
@@ -166,12 +169,12 @@ export function NewAssessmentPanel({
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
             disabled={!canGoNext}
-            className={`rounded-full px-5 py-3 text-sm font-semibold ${
+            className={`rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.97] ${
               canGoNext
                 ? moduleComplete
-                  ? 'bg-emerald-800 text-white'
-                  : 'bg-amber-100 text-amber-950'
-                : 'cursor-not-allowed bg-stone-100 text-stone-400'
+                  ? 'bg-emerald-800 text-white shadow-sm hover:bg-emerald-900 focus-visible:ring-emerald-700'
+                  : 'bg-amber-100 text-amber-950 hover:bg-amber-200 focus-visible:ring-amber-600'
+                : 'cursor-not-allowed bg-stone-200 text-stone-500'
             }`}
           >
             Next module
@@ -179,7 +182,7 @@ export function NewAssessmentPanel({
         </div>
       </section>
 
-      <div className="sticky bottom-4 z-10 rounded-[1.75rem] border border-stone-200 bg-white p-4 shadow-lg">
+      <div className="sticky bottom-4 z-10 animate-slide-up rounded-[1.75rem] border border-emerald-200 bg-white/95 p-4 shadow-lg backdrop-blur-sm">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-sm font-semibold text-stone-900">
@@ -193,7 +196,7 @@ export function NewAssessmentPanel({
             <button
               type="button"
               onClick={onReset}
-              className="rounded-full border border-stone-300 px-5 py-3 text-sm font-semibold text-stone-800"
+              className="rounded-full border border-stone-300 px-5 py-3 text-sm font-semibold text-stone-800 transition-all duration-200 hover:border-stone-500 hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2 active:scale-[0.97]"
             >
               Reset answers
             </button>
@@ -201,9 +204,9 @@ export function NewAssessmentPanel({
               type="button"
               onClick={onComplete}
               disabled={!allAnswered}
-              className={`rounded-full px-5 py-3 text-sm font-semibold ${
+              className={`rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.97] ${
                 allAnswered
-                  ? 'bg-emerald-800 text-white'
+                  ? 'bg-emerald-800 text-white shadow-sm hover:bg-emerald-900 focus-visible:ring-emerald-700'
                   : 'cursor-not-allowed bg-stone-200 text-stone-500'
               }`}
             >

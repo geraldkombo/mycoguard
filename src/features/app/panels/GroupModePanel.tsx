@@ -74,7 +74,7 @@ export function GroupModePanel({
   }
 
   return (
-    <section className="mt-8 space-y-6">
+    <section className="animate-fade-in mt-8 space-y-6">
       <section className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
         <h2 className="text-2xl font-semibold text-stone-950">Group facilitator mode</h2>
         <p className="mt-4 text-sm leading-7 text-stone-700">
@@ -88,7 +88,7 @@ export function GroupModePanel({
           <input
             value={sessionName}
             onChange={(event) => setSessionName(event.target.value)}
-            className="mt-2 w-full rounded-[1rem] border border-stone-300 bg-white px-4 py-3 text-sm"
+            className="mt-2 w-full rounded-[1rem] border border-stone-300 bg-white px-4 py-3 text-sm transition-all duration-200 focus:border-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-100"
             placeholder="e.g., PELUM field school — June visit"
           />
         </label>
@@ -97,7 +97,7 @@ export function GroupModePanel({
           <button
             type="button"
             onClick={() => setIsTakingAssessment(true)}
-            className="rounded-full bg-emerald-800 px-5 py-3 text-sm font-semibold text-white"
+            className="rounded-full bg-emerald-800 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-emerald-900 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 active:scale-[0.97]"
           >
             Start next assessment
           </button>
@@ -106,21 +106,21 @@ export function GroupModePanel({
               <button
                 type="button"
                 onClick={() => exportGroupSummaryPdf(sessionName, rows)}
-                className="rounded-full bg-stone-900 px-5 py-3 text-sm font-semibold text-white"
+                className="rounded-full bg-stone-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-stone-800 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-600 focus-visible:ring-offset-2 active:scale-[0.97]"
               >
                 Download group PDF
               </button>
               <button
                 type="button"
                 onClick={exportGroupCsv}
-                className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800"
+                className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 transition-all duration-200 hover:border-stone-500 hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2 active:scale-[0.97]"
               >
                 Download group CSV
               </button>
               <button
                 type="button"
                 onClick={exportGroupJson}
-                className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800"
+                className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 transition-all duration-200 hover:border-stone-500 hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2 active:scale-[0.97]"
               >
                 Download group JSON
               </button>
@@ -131,7 +131,7 @@ export function GroupModePanel({
 
       {isTakingAssessment ? (
         <section className="space-y-6">
-          <section className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
+          <section className="animate-fade-in rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
             <h3 className="text-xl font-semibold text-stone-950">Participant</h3>
             <p className="mt-3 text-sm leading-7 text-stone-700">
               Use a short identifier (name, village, or code). This stays local on the device
@@ -142,7 +142,7 @@ export function GroupModePanel({
               <input
                 value={participantLabel}
                 onChange={(event) => setParticipantLabel(event.target.value)}
-                className="mt-2 w-full rounded-[1rem] border border-stone-300 bg-white px-4 py-3 text-sm"
+                className="mt-2 w-full rounded-[1rem] border border-stone-300 bg-white px-4 py-3 text-sm transition-all duration-200 focus:border-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-100"
                 placeholder={`Participant ${rows.length + 1}`}
               />
             </label>
@@ -150,7 +150,7 @@ export function GroupModePanel({
               <button
                 type="button"
                 onClick={resetFlow}
-                className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800"
+                className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 transition-all duration-200 hover:border-stone-500 hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2 active:scale-[0.97]"
               >
                 Cancel
               </button>
@@ -202,15 +202,15 @@ export function GroupModePanel({
             <table className="min-w-full border-separate border-spacing-y-2">
               <thead>
                 <tr className="text-left text-xs font-semibold uppercase tracking-[0.22em] text-stone-600">
-                  <th className="px-3">Participant</th>
-                  <th className="px-3">Risk</th>
-                  <th className="px-3">Score</th>
-                  <th className="px-3">Open</th>
+                  <th className="px-3 py-2">Participant</th>
+                  <th className="px-3 py-2">Risk</th>
+                  <th className="px-3 py-2">Score</th>
+                  <th className="px-3 py-2">Open</th>
                 </tr>
               </thead>
               <tbody>
                 {rows.map((row) => (
-                  <tr key={row.record.id} className="rounded-[1.25rem] bg-stone-50">
+                  <tr key={row.record.id} className="rounded-[1.25rem] bg-stone-50 transition-colors duration-200 hover:bg-stone-100">
                     <td className="px-3 py-3 text-sm font-semibold text-stone-900">
                       {row.participantLabel}
                     </td>
@@ -221,9 +221,9 @@ export function GroupModePanel({
                     <td className="px-3 py-3 text-sm">
                       <a
                         href={`/app/results?id=${row.record.id}`}
-                        className="font-semibold text-emerald-900 hover:underline"
+                        className="font-semibold text-emerald-900 transition-colors hover:underline focus-visible:outline-none focus-visible:underline"
                       >
-                        View
+                        View &rarr;
                       </a>
                     </td>
                   </tr>

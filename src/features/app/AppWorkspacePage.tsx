@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { SiteShell } from '../../components/layout/SiteShell'
 import { Seo } from '../../seo/Seo'
 import { getBreadcrumbStructuredData } from '../../seo/structuredData'
+import { showToast } from '../../components/ui/toastUtils'
+import { WorkspaceSkeleton } from '../../components/ui/Skeleton'
 import { useOfflineWorkspace } from './hooks/useOfflineWorkspace'
 import { AppHomePanel } from './panels/AppHomePanel'
 import { NewAssessmentPanel } from './panels/NewAssessmentPanel'
@@ -35,6 +37,16 @@ export function AppWorkspacePage() {
     saveToHistory,
   } = useOfflineWorkspace()
 
+  if (isLoadingStorage) {
+    return (
+      <SiteShell>
+        <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+          <WorkspaceSkeleton />
+        </section>
+      </SiteShell>
+    )
+  }
+
   return (
     <SiteShell>
       <Seo
@@ -44,8 +56,17 @@ export function AppWorkspacePage() {
         structuredData={getBreadcrumbStructuredData(route.label, route.path)}
       />
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-stone-500">
+          <Link to="/" className="transition-colors hover:text-emerald-900 focus-visible:outline-none focus-visible:underline">
+            Home
+          </Link>
+          <span className="mx-2">/</span>
+          <span className="text-stone-800 font-medium">{route.label}</span>
+        </nav>
+
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <section className="rounded-[2rem] border border-stone-200 bg-white p-6 shadow-sm">
+          <section className="animate-fade-in rounded-[2rem] border border-stone-200 bg-white p-6 shadow-sm">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-800">
@@ -61,10 +82,10 @@ export function AppWorkspacePage() {
                     key={option}
                     type="button"
                     onClick={() => setLanguage(option)}
-                    className={`rounded-full px-3 py-1.5 text-sm font-medium ${
+                    className={`rounded-full px-3 py-1.5 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 ${
                       language === option
-                        ? 'bg-emerald-800 text-white'
-                        : 'text-stone-700'
+                        ? 'bg-emerald-800 text-white shadow-sm'
+                        : 'text-stone-700 hover:text-stone-900'
                     }`}
                   >
                     {option === 'en' ? 'English' : 'Kiswahili'}
@@ -84,10 +105,10 @@ export function AppWorkspacePage() {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`rounded-[1.25rem] border p-4 transition ${
+                  className={`rounded-[1.25rem] border p-4 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 ${
                     item.path === route.path
-                      ? 'border-emerald-700 bg-emerald-50'
-                      : 'border-stone-200 bg-stone-50 hover:border-emerald-700'
+                      ? 'border-emerald-700 bg-emerald-50 shadow-sm'
+                      : 'border-stone-200 bg-stone-50 hover:border-emerald-700 hover:bg-white hover:shadow-sm'
                   }`}
                 >
                   <p className="text-sm font-semibold text-stone-900">{item.label}</p>
@@ -97,7 +118,7 @@ export function AppWorkspacePage() {
             </div>
           </section>
 
-          <aside className="rounded-[2rem] border border-stone-200 bg-stone-900 p-6 text-white shadow-sm">
+          <aside className="animate-fade-in rounded-[2rem] border border-stone-200 bg-stone-900 p-6 text-white shadow-sm" style={{ animationDelay: '0.1s' }}>
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-300">
               Offline status
             </p>
@@ -112,7 +133,9 @@ export function AppWorkspacePage() {
               </p>
               <p className="mt-2 text-3xl font-semibold text-white">{progress.percentComplete}%</p>
               <p className="mt-2 text-sm text-stone-300">
-                {progress.answeredQuestions} of {progress.totalQuestions} questions answered
+                {progress.totalQuestions === 0
+                  ? 'No active assessment'
+                  : `${progress.answeredQuestions} of ${progress.totalQuestions} questions answered`}
               </p>
             </div>
           </aside>
@@ -143,8 +166,14 @@ export function AppWorkspacePage() {
         {route.path === '/app/history' ? (
           <HistoryPanel
             assessments={assessments}
-            onExportCsv={() => exportAssessmentsToCsv(assessments)}
-            onExportJson={() => exportAssessmentsBackupJson(assessments)}
+            onExportCsv={() => {
+              exportAssessmentsToCsv(assessments)
+              showToast('CSV summary downloaded')
+            }}
+            onExportJson={() => {
+              exportAssessmentsBackupJson(assessments)
+              showToast('JSON backup downloaded')
+            }}
           />
         ) : null}
 
@@ -157,16 +186,25 @@ export function AppWorkspacePage() {
         {route.path === '/app/group-mode' ? (
           <GroupModePanel
             language={language}
-            onSaveToHistory={saveToHistory}
+            onSaveToHistory={async (record) => {
+              await saveToHistory(record)
+              showToast('Participant assessment saved')
+            }}
           />
         ) : null}
 
         {route.path === '/app/settings' ? (
           <SettingsPanel
             language={language}
-            onLanguageChange={setLanguage}
+            onLanguageChange={(lang) => {
+              setLanguage(lang)
+              showToast(lang === 'en' ? 'Language changed to English' : 'Lugha imebadilishwa hadi Kiswahili', 'info')
+            }}
             assessments={assessments}
-            onClearAssessments={clearAssessments}
+            onClearAssessments={async () => {
+              await clearAssessments()
+              showToast('All assessments cleared')
+            }}
           />
         ) : null}
       </section>

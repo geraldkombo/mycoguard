@@ -49,10 +49,11 @@ export function PublicPage({ path }: { path: string }) {
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="space-y-6">
-          {page.sections.map((section) => (
+          {page.sections.map((section, i) => (
             <section
               key={section.title}
-              className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm"
+              className="animate-slide-up rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm transition-all duration-200 hover:shadow-md"
+              style={{ animationDelay: `${i * 0.05}s` }}
             >
               <SectionBlock section={section} />
             </section>
@@ -64,7 +65,7 @@ export function PublicPage({ path }: { path: string }) {
             <h2 className="text-2xl font-semibold text-stone-950">FAQ answers</h2>
             <dl className="mt-6 space-y-5">
               {faqItems.map((item) => (
-                <div key={item.question} className="rounded-3xl border border-stone-200 p-5">
+                <div key={item.question} className="rounded-3xl border border-stone-200 p-5 transition-colors duration-200 hover:border-stone-300">
                   <dt className="font-semibold text-stone-900">{item.question}</dt>
                   <dd className="mt-2 text-sm leading-7 text-stone-700">{item.answer}</dd>
                 </div>
@@ -80,7 +81,7 @@ export function PublicPage({ path }: { path: string }) {
               <Link
                 key={item.href}
                 to={item.href}
-                className="inline-flex rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-800 transition hover:border-emerald-700 hover:text-emerald-900"
+                className="inline-flex rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-800 transition-all duration-200 hover:border-emerald-700 hover:bg-emerald-50 hover:text-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 active:scale-[0.97]"
               >
                 {item.label}
               </Link>

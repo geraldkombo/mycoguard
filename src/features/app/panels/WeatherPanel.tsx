@@ -28,7 +28,7 @@ export function WeatherPanel({ language }: { language: AppLanguage }) {
       : 'border-emerald-200 bg-emerald-50 text-emerald-950'
 
   return (
-    <section className="mt-8 space-y-6">
+    <section className="animate-fade-in mt-8 space-y-6">
       <section className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
         <h2 className="text-2xl font-semibold text-stone-950">Weather mode (offline)</h2>
         <p className="mt-4 text-sm leading-7 text-stone-700">
@@ -42,10 +42,10 @@ export function WeatherPanel({ language }: { language: AppLanguage }) {
               key={condition.id}
               type="button"
               onClick={() => setSelectedId(condition.id)}
-              className={`rounded-[1.25rem] border p-4 text-left transition ${
+              className={`rounded-[1.25rem] border p-4 text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 active:scale-[0.98] ${
                 selectedId === condition.id
-                  ? 'border-emerald-700 bg-emerald-50'
-                  : 'border-stone-200 bg-stone-50 hover:border-emerald-700'
+                  ? 'border-emerald-700 bg-emerald-50 shadow-sm'
+                  : 'border-stone-200 bg-stone-50 hover:border-emerald-700 hover:bg-white hover:shadow-sm'
               }`}
             >
               <p className="text-sm font-semibold text-stone-900">{condition.label}</p>
@@ -58,7 +58,7 @@ export function WeatherPanel({ language }: { language: AppLanguage }) {
       </section>
 
       {selected ? (
-        <section className={`rounded-[1.75rem] border p-6 shadow-sm ${bannerStyles}`}>
+        <section className={`animate-fade-in rounded-[1.75rem] border p-6 shadow-sm ${bannerStyles}`}>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] opacity-80">
             Risk banner
           </p>
@@ -70,7 +70,7 @@ export function WeatherPanel({ language }: { language: AppLanguage }) {
           {actionCards.length > 0 ? (
             <div className="mt-6 grid gap-4 lg:grid-cols-2">
               {actionCards.map((card) => (
-                <div key={card.id} className="rounded-[1.25rem] border border-stone-200 bg-white p-4 text-stone-900">
+                <div key={card.id} className="rounded-[1.25rem] border border-stone-200 bg-white p-4 text-stone-900 transition-all duration-200 hover:shadow-sm">
                   <p className="font-semibold">{card.title}</p>
                   <p className="mt-2 text-sm leading-7 text-stone-700">{card.summary}</p>
                 </div>
@@ -80,13 +80,13 @@ export function WeatherPanel({ language }: { language: AppLanguage }) {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               to="/app/drying-directory"
-              className="rounded-full bg-stone-900 px-5 py-3 text-sm font-semibold text-white"
+              className="rounded-full bg-stone-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-stone-800 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-600 focus-visible:ring-offset-2 active:scale-[0.97]"
             >
               Open drying directory
             </Link>
             <Link
               to="/app/new-assessment"
-              className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800"
+              className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 transition-all duration-200 hover:border-emerald-700 hover:text-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2 active:scale-[0.97]"
             >
               Start an assessment
             </Link>
@@ -112,10 +112,10 @@ export function WeatherPanel({ language }: { language: AppLanguage }) {
               key={key}
               type="button"
               onClick={() => setSeason(key)}
-              className={`rounded-full px-4 py-2 text-sm font-semibold ${
+              className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
                 season === key
-                  ? 'bg-emerald-800 text-white'
-                  : 'border border-stone-300 bg-white text-stone-800'
+                  ? 'bg-emerald-800 text-white shadow-sm focus-visible:ring-emerald-700'
+                  : 'border border-stone-300 bg-white text-stone-800 hover:border-stone-500 hover:bg-stone-50 focus-visible:ring-stone-400'
               }`}
             >
               {key === 'MAM' ? 'MAM (Long rains)' : key === 'OND' ? 'OND (Short rains)' : 'Dry season'}
@@ -133,7 +133,7 @@ export function WeatherPanel({ language }: { language: AppLanguage }) {
         </p>
         <div className="mt-6 space-y-3">
           {weatherRiskRules.ics_templates.map((template) => (
-            <div key={template.id} className="rounded-[1.25rem] border border-stone-200 p-4">
+            <div key={template.id} className="rounded-[1.25rem] border border-stone-200 p-4 transition-colors duration-200 hover:border-stone-300">
               <p className="font-semibold text-stone-900">{template.title}</p>
               <p className="mt-2 text-sm leading-7 text-stone-700">{template.description}</p>
               <button
@@ -145,7 +145,7 @@ export function WeatherPanel({ language }: { language: AppLanguage }) {
                     recurrence: template.recurrence,
                   })
                 }
-                className="mt-4 rounded-full bg-stone-900 px-4 py-2 text-sm font-semibold text-white"
+                className="mt-4 rounded-full bg-stone-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-stone-800 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-600 focus-visible:ring-offset-2 active:scale-[0.97]"
               >
                 Download .ics
               </button>

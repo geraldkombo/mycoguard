@@ -23,12 +23,31 @@ Persistent disclaimer (verbatim):
 ## Tech stack
 
 - Vite + React + TypeScript
-- Tailwind CSS
+- Tailwind CSS v4
 - `react-router-dom` (BrowserRouter)
 - `react-helmet-async` for metadata
 - `vite-plugin-pwa` for offline caching / app shell
 - `localforage` for local-first storage
 - `jsPDF` for PDF exports
+
+## Project structure
+
+```
+src/
+├── App.tsx                    # Thin router
+├── main.tsx                   # Entry point
+├── index.css                  # Global styles + animations
+├── components/
+│   ├── layout/SiteShell.tsx   # Header, nav, footer
+│   └── ui/                    # Toast, Skeleton
+├── features/
+│   ├── public/                # HomePage, PublicPage, NotFoundPage
+│   └── app/                   # Workspace, panels, hook, utils
+├── app/                       # data, storage, exports, engine
+├── config/site.ts             # Constants, disclaimer
+├── content/publicContent.ts   # Page definitions
+└── seo/                       # Helmet + structured data
+```
 
 ## Run locally
 

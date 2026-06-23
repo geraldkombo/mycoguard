@@ -15,13 +15,13 @@ export function ResultsPanel({ assessment }: { assessment?: AssessmentRecord }) 
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
             to="/app/new-assessment"
-            className="inline-flex rounded-full bg-emerald-800 px-5 py-3 text-sm font-semibold text-white"
+            className="inline-flex rounded-full bg-emerald-800 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-emerald-900 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 active:scale-[0.97]"
           >
             Start a new assessment
           </Link>
           <Link
             to="/app/history"
-            className="inline-flex rounded-full border border-stone-300 px-5 py-3 text-sm font-semibold text-stone-800"
+            className="inline-flex rounded-full border border-stone-300 px-5 py-3 text-sm font-semibold text-stone-800 transition-all duration-200 hover:border-emerald-700 hover:text-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2 active:scale-[0.97]"
           >
             View history
           </Link>
@@ -31,7 +31,7 @@ export function ResultsPanel({ assessment }: { assessment?: AssessmentRecord }) 
   }
 
   return (
-    <section className="mt-8 space-y-6">
+    <section className="animate-fade-in mt-8 space-y-6">
       <div className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-stone-600">
           Latest assessment result
@@ -58,20 +58,20 @@ export function ResultsPanel({ assessment }: { assessment?: AssessmentRecord }) 
           <button
             type="button"
             onClick={() => exportSingleAssessmentPdf(assessment)}
-            className="rounded-full bg-stone-900 px-5 py-3 text-sm font-semibold text-white"
+            className="rounded-full bg-stone-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-stone-800 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-600 focus-visible:ring-offset-2 active:scale-[0.97]"
           >
             Download PDF
           </button>
           <button
             type="button"
             onClick={() => exportSingleAssessmentJson(assessment)}
-            className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800"
+            className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 transition-all duration-200 hover:border-stone-500 hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2 active:scale-[0.97]"
           >
             Download JSON
           </button>
           <Link
             to="/app/history"
-            className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800"
+            className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 transition-all duration-200 hover:border-emerald-700 hover:text-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2 active:scale-[0.97]"
           >
             Export CSV / backup
           </Link>
@@ -79,7 +79,7 @@ export function ResultsPanel({ assessment }: { assessment?: AssessmentRecord }) 
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
+        <div className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm transition-all duration-200 hover:shadow-md">
           <h3 className="text-xl font-semibold text-stone-950">Triggered drivers</h3>
           <div className="mt-4 flex flex-wrap gap-3">
             {assessment.triggeredTags.length > 0 ? (
@@ -99,11 +99,11 @@ export function ResultsPanel({ assessment }: { assessment?: AssessmentRecord }) 
           </div>
         </div>
 
-        <div className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
+        <div className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm transition-all duration-200 hover:shadow-md">
           <h3 className="text-xl font-semibold text-stone-950">Top recommended actions</h3>
           <div className="mt-4 space-y-4">
             {assessment.recommendedActions.map((action) => (
-              <div key={action.id} className="rounded-[1.25rem] border border-stone-200 p-4">
+              <div key={action.id} className="rounded-[1.25rem] border border-stone-200 p-4 transition-colors duration-200 hover:border-stone-300">
                 <p className="font-semibold text-stone-900">{action.title}</p>
                 <p className="mt-2 text-sm leading-7 text-stone-700">{action.summary}</p>
               </div>

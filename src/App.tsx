@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import { ToastContainer } from './components/ui/Toast'
 import { HomePage } from './features/public/HomePage'
 import { PublicPage } from './features/public/PublicPage'
 import { NotFoundPage } from './features/public/NotFoundPage'
@@ -19,6 +20,7 @@ function App() {
         ))}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
   )
 }

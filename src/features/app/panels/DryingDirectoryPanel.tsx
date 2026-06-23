@@ -2,7 +2,7 @@ import { dryingSites } from '../../../app/data'
 
 export function DryingDirectoryPanel() {
   return (
-    <section className="mt-8 space-y-6">
+    <section className="animate-fade-in mt-8 space-y-6">
       <section className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
         <h2 className="text-2xl font-semibold text-stone-950">Verified drying directory</h2>
         <p className="mt-4 text-sm leading-7 text-stone-700">
@@ -13,7 +13,7 @@ export function DryingDirectoryPanel() {
 
       <section className="space-y-4">
         {dryingSites.map((site) => (
-          <div key={site.id} className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
+          <div key={site.id} className="animate-slide-up rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm transition-all duration-200 hover:shadow-md">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-600">
@@ -31,9 +31,9 @@ export function DryingDirectoryPanel() {
                 href={site.source_url}
                 target="_blank"
                 rel="noreferrer"
-                className="font-semibold text-emerald-900 hover:underline"
+                className="font-semibold text-emerald-900 transition-colors hover:underline focus-visible:outline-none focus-visible:underline"
               >
-                Source URL
+                Source URL &nearr;
               </a>
             </div>
           </div>

@@ -7,8 +7,8 @@ export function NotFoundPage() {
   return (
     <SiteShell>
       <Seo
-        title="Page not found | MycoGuard Kenya"
-        description="The requested page could not be found in the MycoGuard Kenya web app."
+        title="Page not found | MycoGuard"
+        description="The requested page could not be found in the MycoGuard web app."
         canonicalPath="/404"
       />
       <section className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
@@ -22,13 +22,13 @@ export function NotFoundPage() {
         <div className="mt-8 flex justify-center gap-3">
           <Link
             to="/"
-            className="inline-flex rounded-full bg-emerald-800 px-5 py-3 text-sm font-semibold text-white"
+            className="inline-flex rounded-full bg-emerald-800 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-emerald-900 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2 active:scale-[0.97]"
           >
             Go home
           </Link>
           <Link
             to="/app"
-            className="inline-flex rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800"
+            className="inline-flex rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-800 transition-all duration-200 hover:border-emerald-700 hover:text-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2 active:scale-[0.97]"
           >
             Open the app
           </Link>

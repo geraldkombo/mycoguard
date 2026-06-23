@@ -12,7 +12,7 @@ export function HistoryPanel({
   onExportJson: () => void
 }) {
   return (
-    <section className="mt-8 rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
+    <section className="animate-fade-in mt-8 rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
       <h2 className="text-2xl font-semibold text-stone-950">Offline assessment history</h2>
       <p className="mt-4 text-sm leading-7 text-stone-700">
         Saved results stay on this device through local offline storage so users can reopen them
@@ -23,10 +23,10 @@ export function HistoryPanel({
           type="button"
           onClick={onExportCsv}
           disabled={assessments.length === 0}
-          className={`rounded-full px-5 py-3 text-sm font-semibold ${
+          className={`rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.97] ${
             assessments.length === 0
               ? 'cursor-not-allowed bg-stone-200 text-stone-500'
-              : 'bg-stone-900 text-white'
+              : 'bg-stone-900 text-white shadow-sm hover:bg-stone-800 hover:shadow-md focus-visible:ring-stone-600'
           }`}
         >
           Download CSV summary
@@ -35,10 +35,10 @@ export function HistoryPanel({
           type="button"
           onClick={onExportJson}
           disabled={assessments.length === 0}
-          className={`rounded-full px-5 py-3 text-sm font-semibold ${
+          className={`rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.97] ${
             assessments.length === 0
               ? 'cursor-not-allowed bg-stone-200 text-stone-500'
-              : 'border border-stone-300 bg-white text-stone-800'
+              : 'border border-stone-300 bg-white text-stone-800 hover:border-stone-500 hover:bg-stone-50 focus-visible:ring-stone-400'
           }`}
         >
           Download JSON backup
@@ -50,7 +50,7 @@ export function HistoryPanel({
             <Link
               key={assessment.id}
               to={`/app/results?id=${assessment.id}`}
-              className="block rounded-[1.25rem] border border-stone-200 p-4 transition hover:border-emerald-700"
+              className="block rounded-[1.25rem] border border-stone-200 p-4 transition-all duration-200 hover:border-emerald-700 hover:bg-emerald-50/30 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2"
             >
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div>
@@ -61,7 +61,7 @@ export function HistoryPanel({
                     Saved {new Date(assessment.createdAt).toLocaleString()}
                   </p>
                 </div>
-                <span className="text-sm font-semibold text-emerald-900">Open result</span>
+                <span className="text-sm font-semibold text-emerald-900">Open result &rarr;</span>
               </div>
             </Link>
           ))

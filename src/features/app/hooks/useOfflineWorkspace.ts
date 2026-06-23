@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 
 import { loadAssessments, loadLanguage, saveAssessments, saveLanguage } from '../../../app/storage'
 import {
@@ -19,6 +19,7 @@ export function useOfflineWorkspace() {
   const [isLoadingStorage, setIsLoadingStorage] = useState(true)
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
+  const location = useLocation()
 
   useEffect(() => {
     async function hydrate() {
@@ -38,8 +39,7 @@ export function useOfflineWorkspace() {
     void saveLanguage(language)
   }, [isLoadingStorage, language])
 
-  const locationPath = window.location.pathname
-  const route = appRouteSummaries.find((item) => item.path === locationPath) ?? appRouteSummaries[0]
+  const route = appRouteSummaries.find((item) => item.path === location.pathname) ?? appRouteSummaries[0]
 
   const progress = useMemo(() => getAssessmentProgress(answers), [answers])
   const latestAssessment = assessments[0]
