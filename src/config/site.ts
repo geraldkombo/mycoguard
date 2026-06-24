@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://mycoguardkenya.pages.dev'
+export const SITE_URL = 'https://geraldkombo.github.io/mycoguard'
 
 export const SITE_NAME = 'MycoGuard Kenya'
 
@@ -10,7 +10,7 @@ export const DEFAULT_OG_IMAGE = `${SITE_URL}/favicon.svg`
 export const CONTACT_PLACEHOLDERS = {
   innovator: 'Gerald Kombo',
   organization: 'Independent Innovator',
-  email: 'contact@example.com',
+  email: 'gerald@example.com',
 }
 
 export const PERSISTENT_DISCLAIMER =

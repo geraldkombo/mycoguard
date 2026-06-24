@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Build artifacts
+tsconfig.tsbuildinfo
+
+# Archives
+*.zip
+
+# Prompt artifacts
+VERDANT_FINAL_PROMPT.md

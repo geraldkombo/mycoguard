@@ -25,8 +25,8 @@ export function DryingDirectoryPanel() {
                 </p>
                 <h3 className="mt-2 text-xl font-semibold text-stone-950">{site.name}</h3>
               </div>
-              <p className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-900">
-                Verified {site.verified_date}
+              <p className="rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-900">
+                {site.verified_date}
               </p>
             </div>
             <p className="mt-4 text-sm leading-7 text-stone-700">{site.pricing}</p>

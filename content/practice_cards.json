@@ -1,210 +1,102 @@
 [
   {
     "id": "pc_01",
-    "title": "Timely Harvesting",
-    "summary": "Harvest immediately at physiological maturity to prevent field mold.",
-    "steps": ["Check for maturity.", "Harvest when dry during sunny hours.", "Avoid dropping cobs on wet soil."],
-    "materials": ["Clean harvesting bags"],
-    "safety_notes": "Do not harvest during heavy rain.",
-    "one_health_links": ["Plant Health", "Ecosystem Resilience"],
-    "fao_10_elements_tags": ["Efficiency", "Resilience"],
-    "scaling_tip": "Organize community labor groups for rapid harvesting.",
-    "when_to_use": "End of season, weather permitting.",
-    "evidence_note": "Extended field drying increases insect and Aspergillus exposure."
+    "title": "Timely harvesting",
+    "summary": "Harvest as soon as grain is mature to reduce field exposure to moisture, pests, and mould spores."
   },
   {
     "id": "pc_02",
-    "title": "Tarp/Canvas Drying",
-    "summary": "Never dry grain directly on bare soil.",
-    "steps": ["Sweep the area.", "Lay down a clean, waterproof tarpaulin.", "Spread grain thinly.", "Turn frequently."],
-    "materials": ["Tarpaulin", "Rake"],
-    "safety_notes": "Cover immediately if rain threatens.",
-    "one_health_links": ["Food Safety"],
-    "fao_10_elements_tags": ["Efficiency"],
-    "scaling_tip": "Cooperatives can bulk-buy tarps to reduce costs.",
-    "when_to_use": "Drying phase.",
-    "evidence_note": "Soil is the primary reservoir for A. flavus spores."
+    "title": "Sort and remove damaged grain",
+    "summary": "Remove pest-damaged, shrivelled, or discoloured grain before it enters the drying or storage process."
   },
   {
     "id": "pc_03",
-    "title": "Safe Sorting (Culling)",
-    "summary": "Remove broken, discolored, or insect-damaged grains.",
-    "steps": ["Spread grain on tarp.", "Visually inspect.", "Remove discolored/moldy grains.", "Separate broken grains."],
-    "materials": ["Gloves", "Sorting trays"],
-    "safety_notes": "Do NOT feed moldy culls to chickens or cows. Remove from food/feed chain.",
-    "one_health_links": ["Animal Health", "Human Health"],
-    "fao_10_elements_tags": ["Synergies"],
-    "scaling_tip": "Use mechanized sorters at aggregation level.",
-    "when_to_use": "Before shelling and before storage.",
-    "evidence_note": "Broken grains have compromised pericarps, making them highly susceptible to Aspergillus."
+    "title": "Dry grain promptly",
+    "summary": "Begin drying within 12 hours of harvest, especially if grain was harvested damp. Sun-dry on clean tarps until moisture is safe."
   },
   {
     "id": "pc_04",
-    "title": "Pallet Usage (Dunnage)",
-    "summary": "Keep stored bags off the floor to prevent moisture wicking.",
-    "steps": ["Place wooden pallets on storage floor.", "Ensure gaps from walls.", "Stack bags cross-wise."],
-    "materials": ["Wooden pallets"],
-    "safety_notes": "Ensure pallets are dry and termite-free.",
-    "one_health_links": ["Food Safety"],
-    "fao_10_elements_tags": ["Efficiency"],
-    "scaling_tip": "Local carpenters can make low-cost dunnage from offcuts.",
-    "when_to_use": "Home store, Aggregation.",
-    "evidence_note": "Ground moisture transfer is a leading cause of localized storage mold."
+    "title": "Use clean harvesting surfaces",
+    "summary": "Keep tarps and equipment clean and free of soil and prior crop debris before each use."
   },
   {
     "id": "pc_05",
-    "title": "Moisture Testing & Safe Threshold",
-    "summary": "Ensure grain is adequately dried to stop fungal synthesis.",
-    "steps": ["Perform a manual salt-bottle test or use a moisture meter.", "Ensure grain moisture drops below the safe threshold."],
-    "materials": ["Dry salt", "Glass jar", "Moisture meter"],
-    "safety_notes": "Use only clean, dry testing containers.",
-    "one_health_links": ["Food Safety"],
-    "fao_10_elements_tags": ["Knowledge Co-creation"],
-    "scaling_tip": "Train lead farmers in moisture validation methods.",
-    "when_to_use": "Before bagging for storage.",
-    "evidence_note": "If grain cannot be dried below the safe moisture threshold of 13.5% within 48 hours of harvest, fungal synthesis accelerates."
+    "title": "Dry on clean surfaces",
+    "summary": "Use a clean tarp, mat, or concrete floor for drying. Avoid bare soil to prevent moisture and spore pickup."
   },
   {
     "id": "pc_06",
-    "title": "Ventilation Check",
-    "summary": "Prevent condensation in storage structures.",
-    "steps": ["Check roof for leaks.", "Ensure eaves are open but screened.", "Check for 'sweating' on tin roofs in mornings."],
-    "materials": ["Mesh screens", "Roofing nails"],
-    "safety_notes": "Fix leaks immediately.",
-    "one_health_links": ["Plant Health"],
-    "fao_10_elements_tags": ["Resilience"],
-    "scaling_tip": "Retrofit existing stores with screened vents.",
-    "when_to_use": "Pre-harvest prep, Home store.",
-    "evidence_note": "Condensation under tin roofs causes re-wetting of upper grain bags."
+    "title": "Stir grain during drying",
+    "summary": "Stir grain often during sun-drying to ensure even drying and prevent hidden damp pockets."
   },
   {
     "id": "pc_07",
-    "title": "Hermetic Storage Bags",
-    "summary": "Use airtight bags to kill pests and stop mold growth.",
-    "steps": ["Ensure grain is completely dry.", "Fill inner liner, squeeze out air, tie tightly.", "Tie outer bag."],
-    "materials": ["Hermetic storage bags"],
-    "safety_notes": "Grain MUST be completely dry before sealing to prevent rotting.",
-    "one_health_links": ["Food Safety", "Ecosystem"],
-    "fao_10_elements_tags": ["Efficiency", "Resilience"],
-    "scaling_tip": "Subsidize hermetic bags through cooperative loans.",
-    "when_to_use": "Home store.",
-    "evidence_note": "Hermetic bags halt insect metabolism, reducing heat and moisture generation."
+    "title": "Dry before processing",
+    "summary": "Ensure grain is fully dry before shelling, milling, or other processing to prevent kernel damage and mould entry."
   },
   {
     "id": "pc_08",
-    "title": "Safe Feed Handling",
-    "summary": "Protect dairy cows from contaminated feed.",
-    "steps": ["Store dairy meal in dry, raised areas.", "Never use rejected human food as dairy feed.", "Clean feed troughs daily."],
-    "materials": ["Covered bins"],
-    "safety_notes": "Aflatoxin in feed metabolizes to AFM1 in milk within 12 hours.",
-    "one_health_links": ["Animal Health", "Human Health"],
-    "fao_10_elements_tags": ["Synergies"],
-    "scaling_tip": "Integrate feed safety into dairy coop extension.",
-    "when_to_use": "Feed store, Milk context.",
-    "evidence_note": "Feeding moldy grain to animals directly introduces AFM1 into milk, contributing to childhood stunting."
+    "title": "Clean processing equipment between batches",
+    "summary": "Remove debris and residue from shellers, mills, and containers between batches to prevent cross-contamination."
   },
   {
     "id": "pc_09",
-    "title": "Transport Hygiene",
-    "summary": "Ensure trucks and carts don't contaminate clean grain.",
-    "steps": ["Sweep truck beds.", "Check for holes in tarps used for covering.", "Avoid transporting during heavy rain without covers."],
-    "materials": ["Brooms", "Truck tarpaulins"],
-    "safety_notes": "Do not transport grain with toxic chemicals.",
-    "one_health_links": ["Food Safety"],
-    "fao_10_elements_tags": ["Efficiency"],
-    "scaling_tip": "Enforce transport hygiene at aggregation gates.",
-    "when_to_use": "Transport.",
-    "evidence_note": "Transport delays in open trucks during rain frequently lead to acute mold outbreaks."
+    "title": "Keep storage dry and ventilated",
+    "summary": "Repair roof leaks, improve airflow, and keep storage areas dry. Check stored grain moisture often."
   },
   {
     "id": "pc_10",
-    "title": "Insect Pest Management",
-    "summary": "Reduce insect damage to prevent fungal entry points.",
-    "steps": ["Scout for pests like Fall Armyworm.", "Remove damaged cobs early.", "Use appropriate sealed storage."],
-    "materials": ["Visual scouting tools"],
-    "safety_notes": "Follow safe handling for any treatments.",
-    "one_health_links": ["Plant Health", "Ecosystem"],
-    "fao_10_elements_tags": ["Diversity", "Synergies"],
-    "scaling_tip": "Promote push-pull companion planting.",
-    "when_to_use": "Field.",
-    "evidence_note": "Pests physically damage the protective pericarp of the grain, creating direct entry wounds for Aspergillus spores."
+    "title": "Remove visibly mouldy grain from food and feed chains",
+    "summary": "Discard mouldy, discoloured, or shrivelled grain. Do not use it for human food or animal feed."
   },
   {
     "id": "pc_11",
-    "title": "Market Segregation",
-    "summary": "Protect dry grains from wet batches at the market.",
-    "steps": ["Test incoming grain for moisture.", "Reject or segregate high-moisture bags.", "Cover at night."],
-    "materials": ["Moisture meters", "Tarps"],
-    "safety_notes": "Mixing wet and dry grain ruins the entire batch.",
-    "one_health_links": ["Human Health"],
-    "fao_10_elements_tags": ["Human and Social Values"],
-    "scaling_tip": "Market committees should enforce segregation protocols.",
-    "when_to_use": "Trader/Market.",
-    "evidence_note": "One damp bag can raise the relative humidity of an entire storage stack."
+    "title": "Keep grain off floors and walls in storage",
+    "summary": "Use pallets, raised platforms, or racks to prevent direct contact with moisture-prone surfaces."
   },
   {
     "id": "pc_12",
-    "title": "Mechanical Shelling Safety",
-    "summary": "Prevent grain cracking during processing.",
-    "steps": ["Calibrate shellers to avoid cracking kernels.", "Clean sheller between batches.", "Ensure grain is dry enough to shell easily."],
-    "materials": ["Calibrated sheller"],
-    "safety_notes": "Keep hands clear of moving parts.",
-    "one_health_links": ["Food Safety"],
-    "fao_10_elements_tags": ["Efficiency"],
-    "scaling_tip": "Train youth operators on machine calibration.",
-    "when_to_use": "Shelling/Milling.",
-    "evidence_note": "Cracked grains are highly susceptible to fungal infection."
+    "title": "Cover grain during transport",
+    "summary": "Use tarps or covers to protect grain from rain and moisture during transit."
   },
   {
     "id": "pc_13",
-    "title": "Aggregation First-In-First-Out",
-    "summary": "Manage stock rotation to prevent old stock deterioration.",
-    "steps": ["Label stacks with intake dates.", "Issue oldest stock first (FIFO).", "Inspect oldest stacks weekly."],
-    "materials": ["Stock cards", "Markers"],
-    "safety_notes": "Isolate any suspect bags immediately.",
-    "one_health_links": ["Food Safety"],
-    "fao_10_elements_tags": ["Efficiency"],
-    "scaling_tip": "Digital inventory tracking for large aggregators.",
-    "when_to_use": "Aggregation.",
-    "evidence_note": "Prolonged storage increases the probability of moisture absorption and fungal bloom."
+    "title": "Clean transport between loads",
+    "summary": "Remove debris and sweep vehicles between trips to avoid cross-contamination from previous cargo."
   },
   {
     "id": "pc_14",
-    "title": "Milk Hygiene Check",
-    "summary": "Basic hygiene prevents bacterial pathogens (does not remove toxins).",
-    "steps": ["Wash hands and udders.", "Use aluminum or food-grade plastic cans, not jerricans.", "Deliver milk quickly."],
-    "materials": ["Aluminum cans"],
-    "safety_notes": "Boiling milk does NOT destroy aflatoxin M1.",
-    "one_health_links": ["Human Health"],
-    "fao_10_elements_tags": ["Efficiency"],
-    "scaling_tip": "Subsidize aluminum cans via dairy coops.",
-    "when_to_use": "Milk context.",
-    "evidence_note": "High AFM1 prevalence in Kenyan milk is directly tied to poor on-farm feed handling."
+    "title": "Ensure market storage is dry and ventilated",
+    "summary": "Market and trader storage should be raised off the ground, covered, and well-ventilated to slow mould spread."
   },
   {
     "id": "pc_15",
-    "title": "Safe Disposal Protocols",
-    "summary": "What to do with heavily moldy grain.",
-    "steps": ["Do NOT feed to livestock or poultry.", "Do NOT burn (inhaling smoke can be toxic).", "Remove from food/feed chain. Follow county agriculture/public health guidance for disposal."],
-    "materials": ["Mask", "Isolation bags"],
-    "safety_notes": "Wear a mask when handling heavily molded grain.",
-    "one_health_links": ["Human Health", "Ecosystem"],
-    "fao_10_elements_tags": ["Resilience"],
-    "scaling_tip": "Counties need centralized safe disposal coordination.",
-    "when_to_use": "Home store, Feed store.",
-    "evidence_note": "Burning toxic grain is hazardous. Remove bad grain safely from the food chain."
+    "title": "Reject mouldy grain at intake",
+    "summary": "Establish a clear visual inspection routine. Reject visibly damaged, mouldy, or discoloured grain from entering the batch."
   },
   {
     "id": "pc_16",
-    "title": "Mechanical Drying Access",
-    "summary": "Use forced-air drying when weather prevents sun drying.",
-    "steps": ["Check MycoGuard Verified Directory.", "Organize group transport to facility.", "Ensure grain reaches safe storage moisture."],
-    "materials": ["Transport", "Drying fees"],
-    "safety_notes": "Verify facility is operational before transport.",
-    "one_health_links": ["Food Safety"],
-    "fao_10_elements_tags": ["Circular and Solidarity Economy"],
-    "scaling_tip": "Group transport reduces per-kg drying costs.",
-    "when_to_use": "Drying, Aggregation.",
-    "evidence_note": "NCPB charges Ksh 18.90 per 1% moisture drop; highly cost-effective against total crop loss."
+    "title": "Segregate grain by quality",
+    "summary": "Store known-quality grain separately from unknown or lower-grade grain to limit contamination spread."
+  },
+  {
+    "id": "pc_17",
+    "title": "Separate feed and food grain storage",
+    "summary": "Keep livestock feed and grain for human consumption in separate areas to prevent cross-contamination."
+  },
+  {
+    "id": "pc_18",
+    "title": "Do not feed mouldy grain to livestock",
+    "summary": "Mouldy grain in feed can introduce aflatoxin into the milk chain. Use only clean, dry feed for dairy animals."
+  },
+  {
+    "id": "pc_19",
+    "title": "Use clean feed for dairy animals",
+    "summary": "Aflatoxin from feed passes into milk. Source feed from trusted suppliers and store it dry and clean."
+  },
+  {
+    "id": "pc_20",
+    "title": "Share aflatoxin awareness across the chain",
+    "summary": "Discuss the grain-feed-milk link with family, cooperative members, and neighbours. Shared awareness strengthens prevention."
   }
 ]
