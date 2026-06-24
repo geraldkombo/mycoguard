@@ -1,6 +1,38 @@
 # MycoGuard Kenya
 
+> **Innovation Submission for 3rd Kenya National Agroecology Symposium**  
+> **Session:** Scaling Agroecological Solutions for One Health Approach  
+> **Category:** Institution/Others  
+> **Contact:** gerald@example.com
+
 MycoGuard Kenya is an **offline-first, mobile-first** Progressive Web App for **aflatoxin risk screening and prevention guidance** across the grain → feed → milk chain in Kenya.
+
+## Innovation Title
+**MycoGuard Kenya: Offline-First One Health Agroecology Tool for Aflatoxin Prevention**
+
+## Problem Statement
+Aflatoxin risk in Kenya silently spreads from poorly dried grain through feed systems to milk, affecting human health, livestock productivity, and farmer incomes. Current solutions require lab testing, connectivity, or expensive equipment - leaving frontline actors (farmers, cooperatives, extension teams) without practical tools at the exact moment decisions are made in fields, drying floors, and cooperative yards.
+
+## Innovation Description
+MycoGuard is a mobile-friendly Progressive Web App that brings One Health agroecology principles to practical use:
+- **Offline-first architecture**: Works after first load without internet, critical for rural Kenya
+- **Explainable risk screening**: Modular checklists across 10 grain-to-milk touchpoints
+- **Prevention guidance**: Clear, actionable next steps tied to risk drivers
+- **Multi-language**: English/Kiswahili support for inclusive access
+- **Group facilitation mode**: For cooperative extension and farmer training sessions
+- **Client-side exports**: PDF, CSV, JSON, and calendar reminders - no data leaves the device
+
+As an agroecological innovation, MycoGuard connects ecosystem health (proper drying, storage), animal health (feed safety), and human health (milk safety) through a practical tool that works where it's needed most.
+
+Scaling is practical: the tool requires no backend, works on basic Android phones, and can be pre-loaded on farmer phones during training sessions.
+
+## Key Features
+- 8 route-based pages with SEO optimization
+- English/Kiswahili language toggle
+- Staged animations and micro-interactions
+- Responsive design tested 320px-1440px
+- PWA with service worker for offline use
+- Accessible with focus rings and reduced motion support
 
 Positioning (verbatim):
 > MycoGuard Kenya gives counties, farmer groups, cooperatives, and frontline value-chain actors an offline way to stop aflatoxin risk before it moves from grain to feed and milk, making One Health agroecology usable at the point where decisions are actually made.
