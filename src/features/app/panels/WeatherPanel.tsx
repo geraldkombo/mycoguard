@@ -32,9 +32,8 @@ export function WeatherPanel({ language }: { language: AppLanguage }) {
       <section className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
         <h2 className="text-2xl font-semibold text-stone-950">Weather mode (offline)</h2>
         <p className="mt-4 text-sm leading-7 text-stone-700">
-          This is not a live forecast. It is an offline tool: select the weather you observe now
-          and MycoGuard will surface prevention actions that reduce moisture, mold, and re-wetting
-          risk.
+          This is not a live forecast. Select the weather you see now and MycoGuard will show
+          prevention actions that reduce moisture, mould, and re-wetting risk.
         </p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           {weatherRiskRules.observed_conditions.map((condition) => (
@@ -137,8 +136,8 @@ export function WeatherPanel({ language }: { language: AppLanguage }) {
       <section className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
         <h3 className="text-xl font-semibold text-stone-950">Offline reminders (.ics export)</h3>
         <p className="mt-3 text-sm leading-7 text-stone-700">
-          Export a calendar file to set reminders on a phone. This works offline and does not use
-          SMS or any backend service.
+          Export a calendar file to set reminders on your phone. Works offline with no SMS or
+          backend needed.
         </p>
         <div className="mt-6 space-y-3">
           {weatherRiskRules.ics_templates.map((template) => (

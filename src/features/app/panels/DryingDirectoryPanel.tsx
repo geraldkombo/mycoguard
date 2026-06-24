@@ -4,10 +4,10 @@ export function DryingDirectoryPanel() {
   return (
     <section className="animate-fade-in mt-8 space-y-6">
       <section className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
-        <h2 className="text-2xl font-semibold text-stone-950">Verified drying directory</h2>
+        <h2 className="text-2xl font-semibold text-stone-950">Drying service directory</h2>
         <p className="mt-4 text-sm leading-7 text-stone-700">
-          Read-only list from the verified directory dataset. If you are offline, you can still
-          read the entries; opening a source link requires connectivity.
+          Listed drying centres from public sources. Verify current service availability and
+          pricing before visiting. Offline access is available; source links need connectivity.
         </p>
       </section>
 

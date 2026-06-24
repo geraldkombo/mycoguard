@@ -90,7 +90,7 @@ export function GroupModePanel({
             value={sessionName}
             onChange={(event) => setSessionName(event.target.value)}
             className="mt-2 w-full rounded-[1rem] border border-stone-300 bg-white px-4 py-3 text-sm transition-all duration-200 focus:border-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-100"
-            placeholder="e.g., PELUM field school — June visit"
+            placeholder="e.g., PELUM field school, June visit"
           />
         </label>
 
