@@ -5,6 +5,7 @@ import { defineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/mycoguard/',
   plugins: [
     react(),
     tailwindcss(),
@@ -19,7 +20,7 @@ export default defineConfig({
         theme_color: '#14532d',
         background_color: '#fafaf9',
         display: 'standalone',
-        start_url: '/',
+        start_url: '/mycoguard/',
         icons: [
           {
             src: '/favicon.svg',

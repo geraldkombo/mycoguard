@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mycoguardkenya.pages.dev/sitemap.xml
+Sitemap: https://geraldkombo.github.io/mycoguard/sitemap.xml
