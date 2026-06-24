@@ -20,10 +20,11 @@ export default defineConfig({
         theme_color: '#14532d',
         background_color: '#fafaf9',
         display: 'standalone',
+        scope: '/mycoguard/',
         start_url: '/mycoguard/',
         icons: [
           {
-            src: '/favicon.svg',
+            src: 'favicon.svg',
             sizes: 'any',
             type: 'image/svg+xml',
             purpose: 'any',
