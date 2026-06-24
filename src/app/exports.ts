@@ -92,7 +92,7 @@ export async function exportSingleAssessmentPdf(record: AssessmentRecord) {
 
   doc.setFont('helvetica', 'bold')
   doc.setFontSize(18)
-  doc.text(`${SITE_NAME} — Assessment Summary`, marginX, cursorY)
+  doc.text(`${SITE_NAME} - Assessment Summary`, marginX, cursorY)
 
   cursorY += 24
   doc.setFont('helvetica', 'normal')
@@ -129,7 +129,7 @@ export async function exportSingleAssessmentPdf(record: AssessmentRecord) {
   doc.setFont('helvetica', 'normal')
   cursorY = addBullets(
     doc,
-    record.recommendedActions.map((action) => `${action.title} — ${action.summary}`),
+    record.recommendedActions.map((action) => `${action.title} - ${action.summary}`),
     marginX,
     cursorY,
     contentWidth,
@@ -161,7 +161,7 @@ export async function exportGroupSummaryPdf(sessionName: string, rows: GroupSumm
 
   doc.setFont('helvetica', 'bold')
   doc.setFontSize(18)
-  doc.text(`${SITE_NAME} — Group Summary`, marginX, cursorY)
+  doc.text(`${SITE_NAME} - Group Summary`, marginX, cursorY)
 
   cursorY += 24
   doc.setFont('helvetica', 'normal')
