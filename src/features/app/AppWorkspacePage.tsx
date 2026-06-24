@@ -120,8 +120,7 @@ export function AppWorkspacePage() {
             <p className="mt-5 max-w-3xl text-lg leading-8 text-stone-700">{route.summary}</p>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-stone-600">
               This workspace is designed for field use: complete checklists, review explainable
-              results, follow practical prevention guidance, and export records without any
-              backend or network dependence after the first load.
+              results, follow practical prevention guidance, and export records.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">

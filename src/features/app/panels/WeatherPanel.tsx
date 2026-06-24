@@ -136,8 +136,7 @@ export function WeatherPanel({ language }: { language: AppLanguage }) {
       <section className="rounded-[1.75rem] border border-stone-200 bg-white p-6 shadow-sm">
         <h3 className="text-xl font-semibold text-stone-950">Offline reminders (.ics export)</h3>
         <p className="mt-3 text-sm leading-7 text-stone-700">
-          Export a calendar file to set reminders on your phone. Works offline with no SMS or
-          backend needed.
+          Export a calendar file to set reminders on your phone. Works offline.
         </p>
         <div className="mt-6 space-y-3">
           {weatherRiskRules.ics_templates.map((template) => (

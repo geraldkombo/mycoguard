@@ -101,11 +101,6 @@ export const faqItems = [
       'Yes. The workflow is intended to support both direct screenings and group facilitation so shared prevention decisions are easier to coordinate.',
   },
   {
-    question: 'Does it require SMS, cloud services, or a backend?',
-    answer:
-      'No. The core design is client-side and offline-first so it can stay useful in lower-connectivity settings.',
-  },
-  {
     question: 'Can it help with drying and storage decisions?',
     answer:
       'Yes. The product is meant to support prevention choices around drying, storage, handling, and related practices before risk compounds.',

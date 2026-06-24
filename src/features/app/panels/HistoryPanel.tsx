@@ -16,7 +16,7 @@ export function HistoryPanel({
       <h2 className="text-2xl font-semibold text-stone-950">Offline assessment history</h2>
       <p className="mt-4 text-sm leading-7 text-stone-700">
         Saved results stay on this device through local offline storage so users can reopen them
-        later without a backend.
+        later.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
         <button

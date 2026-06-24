@@ -73,7 +73,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           {location.pathname.startsWith('/app') ? (
             <p className="text-sm leading-relaxed text-stone-600">
               Offline workspace: checklist-based risk screening, prevention guidance, and client-side
-              exports. No backend, no SMS, and no lab claims.
+               exports.
             </p>
           ) : null}
         </div>
