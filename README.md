@@ -3,9 +3,9 @@
 > **Innovation Submission for 3rd Kenya National Agroecology Symposium**  
 > **Session:** Scaling Agroecological Solutions for One Health Approach  
 > **Category:** Institution/Others  
-> **Contact:** gerald@example.com
+> **Contact:** kombo@protonmail.com
 
-MycoGuard Kenya is an **offline-first, mobile-first** Progressive Web App for **aflatoxin risk screening and prevention guidance** across the grain → feed → milk chain in Kenya.
+MycoGuard Kenya is an **offline-first, mobile-first** Progressive Web App for **aflatoxin risk screening and prevention guidance** across the grain ΓåÆ feed ΓåÆ milk chain in Kenya.
 
 ## Innovation Title
 **MycoGuard Kenya: Offline-First One Health Agroecology Tool for Aflatoxin Prevention**
@@ -66,19 +66,19 @@ Persistent disclaimer (verbatim):
 
 ```
 src/
-├── App.tsx                    # Thin router
-├── main.tsx                   # Entry point
-├── index.css                  # Global styles + animations
-├── components/
-│   ├── layout/SiteShell.tsx   # Header, nav, footer
-│   └── ui/                    # Toast, Skeleton
-├── features/
-│   ├── public/                # HomePage, PublicPage, NotFoundPage
-│   └── app/                   # Workspace, panels, hook, utils
-├── app/                       # data, storage, exports, engine
-├── config/site.ts             # Constants, disclaimer
-├── content/publicContent.ts   # Page definitions
-└── seo/                       # Helmet + structured data
+Γö£ΓöÇΓöÇ App.tsx                    # Thin router
+Γö£ΓöÇΓöÇ main.tsx                   # Entry point
+Γö£ΓöÇΓöÇ index.css                  # Global styles + animations
+Γö£ΓöÇΓöÇ components/
+Γöé   Γö£ΓöÇΓöÇ layout/SiteShell.tsx   # Header, nav, footer
+Γöé   ΓööΓöÇΓöÇ ui/                    # Toast, Skeleton
+Γö£ΓöÇΓöÇ features/
+Γöé   Γö£ΓöÇΓöÇ public/                # HomePage, PublicPage, NotFoundPage
+Γöé   ΓööΓöÇΓöÇ app/                   # Workspace, panels, hook, utils
+Γö£ΓöÇΓöÇ app/                       # data, storage, exports, engine
+Γö£ΓöÇΓöÇ config/site.ts             # Constants, disclaimer
+Γö£ΓöÇΓöÇ content/publicContent.ts   # Page definitions
+ΓööΓöÇΓöÇ seo/                       # Helmet + structured data
 ```
 
 ## Run locally
